@@ -1,171 +1,68 @@
+# Task 2: Sentiment and Thematic Analysis
 
+## Objective
 
-## 📌 Project Overview
+Quantify review sentiment and identify key themes to uncover satisfaction drivers and pain points for each bank.
 
-This project simulates a consulting task where I act as a Data Analyst at **Omega Consultancy**, helping Ethiopian banks improve their mobile banking apps.
+## Steps
 
-Goals:
+### Sentiment Analysis
 
-✅ Scrape app reviews from Google Play
-✅ Analyze sentiment and extract key themes
-✅ Identify customer satisfaction drivers and pain points
-✅ Store cleaned data in a PostgreSQL database (Neon.tech)
-✅ Visualize insights and provide actionable recommendations
+- Used VADER SentimentIntensityAnalyzer for initial sentiment scoring.
+- For each review:
+  - Computed compound sentiment score.
+  - Labeled as:
+    - Positive
+    - Neutral
+    - Negative
+- Aggregated sentiment scores by:
+  - Bank
+  - Rating
 
----
+### Thematic Analysis
 
-## 🗺️ Project Structure
+#### Keyword Extraction
 
-```
-/data                  → Cleaned CSV files  
-/notebooks             → Google Colab notebooks (scraping, analysis, visualization)  
-/scripts               → Python scripts (functions, reusable code)  
-/visuals               → Exported plots/images  
-README.md              → Project documentation  
-requirements.txt       → Project dependencies  
-.gitignore             → Ignored files (e.g. .ipynb_checkpoints)  
-```
+- Used TF-IDF vectorizer to extract top keywords per bank.
+- Keywords reviewed and grouped manually into themes.
 
----
+#### Themes Defined
 
-## ⚙️ Tools & Technologies
+Example themes per bank (actual themes documented in final report):
 
-* Google Colab (Python 3)
-* google-play-scraper
-* pandas
-* nltk / VADER
-* scikit-learn (TF-IDF)
-* PostgreSQL (Neon.tech cloud database)
-* Git & GitHub
+- Account Access Issues
+- Transaction Performance
+- User Interface & Experience
+- Customer Support
+- Feature Requests
 
-## 🚀 Tasks Breakdown
+#### Theme Mapping
 
-### Task 1: Data Collection and Preprocessing
+- Applied rule-based mapping to assign themes back to individual reviews.
+- Created new column: `identified_theme(s)`.
 
-✅ Scraped **400+ reviews per bank** from Google Play Store
-✅ Cleaned data:
+### Output
 
-* Removed duplicates
-* Normalized dates (YYYY-MM-DD)
-* Saved as `cleaned_reviews.csv`
+- Sentiment aggregation saved: `sentiment_aggregated_by_bank_rating.csv`
+- Final reviews with themes saved: `final_reviews_with_themes.csv`
 
-**Source:** Google Play Store
-**Columns:** `review`, `rating`, `date`, `bank`, `source`
+### Git Process
 
+- Branch: `task-2`
+- Frequent commits after each major step:
+  - Sentiment scoring implemented
+  - Aggregation by bank and rating
+  - TF-IDF extraction + theme table prepared
+  - Theme mapping script implemented
+  - Final CSV saved
+  - README updated
 
-### Task 2: Sentiment and Thematic Analysis
+## Notes
 
-✅ Sentiment analysis using **VADER** and optionally **DistilBERT**
-✅ Classified reviews into: **Positive**, **Neutral**, **Negative**
+- Some reviews contain mixed topics → simple rule-based mapping used.
+- Manual review of themes was performed to ensure relevance.
 
-✅ Thematic analysis:
+## Next Steps
 
-* Extracted significant keywords (TF-IDF)
-* Grouped keywords into **3-5 main themes per bank**:
+Proceed to Task 3: Store Cleaned Data in Database.
 
-  * Account Access Issues
-  * Transaction Performance
-  * UI & UX
-  * Support
-  * Feature Requests
-
-✅ Saved as `sentiment_theme_reviews.csv`
-
-
-
-### Task 3: Store Cleaned Data in PostgreSQL
-
-✅ Created database on Neon.tech
-✅ Defined schema:
-
-* `bank_reviews` table: stores cleaned reviews with sentiment and themes
-
-✅ Inserted full dataset (> 1,000 reviews) using SQLAlchemy
-
----
-
-### Task 4: Insights and Recommendations
-
-✅ Visualizations:
-
-* Sentiment distribution per bank
-* Rating distribution per bank
-* Word clouds of common keywords
-
-✅ Insights:
-
-* Identified top **drivers** and **pain points**
-* Compared banks (CBE vs BOA vs Dashen)
-* Provided **2+ actionable recommendations** per bank
-
-✅ Ethical considerations:
-
-* Acknowledge potential **review biases** (e.g. more negative reviews due to unhappy users)
-
-## 💡 Key Insights
-
-### CBE
-
-**Drivers:** Fast navigation, user-friendly UI
-**Pain Points:** Login issues during maintenance
-
-### BOA
-
-**Drivers:** New features (QR payment)
-**Pain Points:** App crashes during transactions
-
-### Dashen
-
-**Drivers:** Fingerprint login support
-**Pain Points:** Delayed OTP deliverables
-
-
-## 📋 Recommendations
-
-* Improve backend stability to avoid transaction errors
-* Optimize app loading time, especially during transfers
-* Enhance customer support response times within the app
-* Monitor app reviews weekly for emerging issues
-
-
-## ⚠️ Ethical Considerations
-
-* Google Play reviews are subject to **selection bias**
-* Highly dissatisfied users tend to post more reviews
-* Recommendations should be validated with additional user feedback (e.g. surveys)
-
-
-
-## 🗂️ How to Run the Project
-
-### 1️⃣ Clone this repo
-
-
-git clone https://github.com/yourusername/mobile-banking-reviews.git
-cd mobile-banking-reviews
-
-### 2️⃣ Install dependencies
-
-pip install -r requirements.txt
-
-### 3️⃣ Run notebooks
-
-* Open Google Colab
-* Upload and run notebooks in `/notebooks` folder
-
-### 4️⃣ View database
-
-* Connect to **Neon.tech** using your PostgreSQL credentials
-* Explore `bank_reviews` table
-
-## 🙏 Acknowledgments
-
-* Ten academy 
-
-## OUTCOME
-
-✅ 1200+ reviews scraped
-✅ Cleaned CSV produced
-✅ Sentiment + themes analyzed
-✅ Data stored in PostgreSQL
-✅ Visuals and recommendations generated
