@@ -3,7 +3,7 @@
 **Omega Consultancy Challenge Project**
 *Analyzing customer satisfaction with mobile banking apps in Ethiopia*
 
-## 🚀 Project Overview
+## Project Overview
 
 This project analyzes Google Play Store reviews of mobile banking apps from three major Ethiopian banks:
 
@@ -13,7 +13,6 @@ This project analyzes Google Play Store reviews of mobile banking apps from thre
 
 The goal is to help Omega Consultancy provide actionable recommendations to improve customer satisfaction, retention, and app features.
 
----
 
 ## 📂 Repository Structure
 
@@ -22,11 +21,9 @@ The goal is to help Omega Consultancy provide actionable recommendations to impr
 | `task-1` | Data Collection and Preprocessing |
 | `task-2` | Sentiment and Thematic Analysis   |
 | `task-3` | Database, files and report                  |
-|
 
----
 
-## ✨ Project Tasks
+## Project Tasks
 
 ### ✅ Task 1: Data Collection and Preprocessing
 
@@ -49,7 +46,7 @@ The goal is to help Omega Consultancy provide actionable recommendations to impr
 * Define schema for Banks and Reviews tables.
 * Insert data using Python.
 
-### 🕑 Task 4: Insights and Recommendations
+### Task 4: Insights and Recommendations
 
 * Visualize sentiment trends and rating distributions.
 * Identify drivers of satisfaction and pain points.
@@ -95,15 +92,7 @@ The goal is to help Omega Consultancy provide actionable recommendations to impr
 
 
 
-##  Project Status
-
-✅ Task 1 Completed
-✅ Task 2 Completed
-   Task 3 In Progress
-  Task 4 Planned
-
-
-## 💻 How to Run
+##  How to Run
 
 1. Clone the repo
 2. Follow task branch-specific README for setup and scripts
