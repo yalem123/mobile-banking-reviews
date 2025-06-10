@@ -21,8 +21,8 @@ The goal is to help Omega Consultancy provide actionable recommendations to impr
 | -------- | --------------------------------- |
 | `task-1` | Data Collection and Preprocessing |
 | `task-2` | Sentiment and Thematic Analysis   |
-| `task-3` | Database Storage                  |
-| `task-4` | Insights and Recommendations      |
+| `task-3` | Database, files and report                  |
+|
 
 ---
 
@@ -44,8 +44,7 @@ The goal is to help Omega Consultancy provide actionable recommendations to impr
 * Defined 3-5 key themes per bank.
 * Mapped themes to individual reviews.
 
-### 🕑 Task 3: Database Storage
-
+### Task 3: Database
 * Store cleaned data in PostgreSQL database (Neon).
 * Define schema for Banks and Reviews tables.
 * Insert data using Python.
@@ -111,12 +110,4 @@ The goal is to help Omega Consultancy provide actionable recommendations to impr
 3. Run in Google Colab or local environment
 
 
-*Developed by Yalem for Omega Consultancy Challenge in TEN Academy*
-
-
-# How to Use
-
-👉 Just copy this and save it as `README.md` in your main branch
-👉 Update status of tasks as you progress
-👉 This looks very professional for reviewers
-
+*Developed by Yalembrhan kelayneh  for Omega Consultancy Challenge in TEN Academy*
